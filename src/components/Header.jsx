@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     <header className=" h-32 flex-none">
-      <div className=" float-right mt-4 mr-4">
+      <div className=" float-right mt-2 mr-2">
         <IconContext.Provider
           value={{ size: "0.9em", style: { color: "#fff" } }}
         >
