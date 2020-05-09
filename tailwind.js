@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-undef
 module.exports = {
   purge: [],
   target: `relaxed`,
@@ -17,6 +18,7 @@ module.exports = {
 
       black: `#000`,
       white: `#fff`,
+      dark: `#181818`,
 
       gray: {
         100: `#f7fafc`,
