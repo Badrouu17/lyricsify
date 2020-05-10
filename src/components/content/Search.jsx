@@ -1,4 +1,5 @@
 import React from "react";
+import SearchResults from "./SearchResults";
 
 const Search = () => {
   return (
@@ -32,7 +33,9 @@ const Search = () => {
           </div>
         </form>
       </div>
-      <div className="flex-1"></div>
+      <div className="flex-1">
+        <SearchResults></SearchResults>
+      </div>
     </React.Fragment>
   );
 };
