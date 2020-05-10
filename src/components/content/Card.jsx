@@ -3,9 +3,9 @@ import React from "react";
 const Card = () => {
   return (
     <div className="flex flex-col">
-      <div className=" bg-transparent max-w-sm rounded overflow-hidden shadow-lg">
+      <div className="self-center bg-transparent max-w-sm rounded overflow-hidden shadow-lg">
         <img
-          className="w-full"
+          className="w-full self-center"
           // eslint-disable-next-line no-undef
           src={require("./cover.jpg")}
           alt="Sunset in the mountains"

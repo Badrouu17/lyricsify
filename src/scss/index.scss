@@ -47,6 +47,27 @@ html {
 }
 
 .horizontal-scroll::-webkit-scrollbar-thumb {
-  background-color: #b794f4;
+  background-color: #1a1a1a;
+}
+
+//liked
+
+.liked {
+  max-height: 75vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 7rem;
+}
+
+.liked::-webkit-scrollbar {
+  background-color: #262626;
+  height: 0.3em;
+}
+
+.liked::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.liked::-webkit-scrollbar-thumb {
   background-color: #1a1a1a;
 }
