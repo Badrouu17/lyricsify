@@ -2,7 +2,7 @@ import React from "react";
 
 const Card = () => {
   return (
-    <div className="pt-12 flex flex-col">
+    <div className="flex flex-col">
       <div className=" bg-transparent max-w-sm rounded overflow-hidden shadow-lg">
         <img
           className="w-full"
