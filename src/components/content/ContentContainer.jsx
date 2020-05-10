@@ -5,7 +5,7 @@ import Header from "../Header";
 const ContentContainer = ({ children }) => {
   return (
     <div className="bg-dark text-6xl font-extrabold flex-1 flex flex-col">
-      <Header></Header>
+      {/* <Header></Header> */}
       <div className="flex-1 flex flex-col">{children}</div>
     </div>
   );

@@ -1,9 +1,11 @@
 import React from "react";
 import SearchResults from "./SearchResults";
+import Header from "../Header";
 
 const Search = () => {
   return (
     <React.Fragment>
+      <Header search></Header>
       <div className="mt-0 text-center text-white overflow-hidden shadow-lg pb-8">
         <h3>Search for your favorite songs</h3>
         <form className="mt-10 w-full flex flex-row justify-between">

@@ -4,7 +4,7 @@ import { IconContext } from "react-icons";
 
 import { IoIosSunny, IoIosMoon } from "react-icons/io";
 
-const Header = () => {
+const Header = ({ search }) => {
   const [checked, setChecked] = useState(false);
 
   const handleChange = (checked) => {
@@ -12,8 +12,8 @@ const Header = () => {
   };
 
   return (
-    <header className=" h-32 flex-none">
-      <div className=" float-right mt-2 mr-2">
+    <header className={`float-right h-32 flex-none`}>
+      <div className={` ${search ? "float-right mr-4 mt-4" : ""}`}>
         <IconContext.Provider
           value={{ size: "0.9em", style: { color: "#fff" } }}
         >
@@ -33,7 +33,7 @@ const Header = () => {
                   height: "100%",
                   fontSize: 15,
                   color: "orange",
-                  paddingRight: 2,
+                  // paddingRight: 2,
                 }}
               >
                 <IoIosSunny></IoIosSunny>
@@ -48,7 +48,7 @@ const Header = () => {
                   height: "100%",
                   fontSize: 15,
                   color: "orange",
-                  paddingRight: 2,
+                  // paddingRight: 2,
                 }}
               >
                 <IoIosMoon></IoIosMoon>
