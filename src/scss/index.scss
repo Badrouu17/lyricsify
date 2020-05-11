@@ -93,3 +93,22 @@ html {
 .hot::-webkit-scrollbar-thumb {
   background-color: #1a1a1a;
 }
+
+// lyrics
+
+.h-lyrics {
+  max-height: 78vh;
+}
+
+.h-lyrics::-webkit-scrollbar {
+  background-color: #262626;
+  height: 0.3em;
+}
+
+.h-lyrics::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.h-lyrics::-webkit-scrollbar-thumb {
+  background-color: #1a1a1a;
+}
