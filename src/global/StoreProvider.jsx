@@ -3,7 +3,9 @@ import { storeContext } from "./store";
 
 // eslint-disable-next-line react/prop-types
 const StoreProvider = ({ children }) => {
-  const [store, setStore] = useState({});
+  const [store, setStore] = useState({
+    theme: "dark",
+  });
 
   const storeValue = useMemo(() => ({ store, setStore }), [store, setStore]);
 

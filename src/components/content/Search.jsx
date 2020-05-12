@@ -6,7 +6,7 @@ const Search = () => {
   return (
     <React.Fragment>
       <Header search></Header>
-      <div className="mt-0 text-center text-white overflow-hidden shadow-lg pb-8">
+      <div className="mt-0 text-center overflow-hidden shadow-lg pb-8">
         <h3>Search for your favorite songs</h3>
         <form className="mt-10 w-full flex flex-row justify-between">
           <div className="w-1/3 flex-none flex flex-wrap mx-6 font-bold">

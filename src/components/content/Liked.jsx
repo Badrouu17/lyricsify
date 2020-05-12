@@ -5,7 +5,7 @@ import Card from "./Card";
 const Liked = () => {
   return (
     <React.Fragment>
-      <div className="mt-0 text-center text-white overflow-hidden shadow-lg">
+      <div className="mt-0 text-center overflow-hidden shadow-lg">
         <Header></Header>
         <h2 className="ml-12">You Liked ❤</h2>
       </div>

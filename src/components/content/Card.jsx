@@ -17,8 +17,8 @@ const Card = ({ liked }) => {
         />
       </div>
       <div className={`text-center px-6 ${liked ? "pt-32" : "py-4"}`}>
-        <div className="font-bolder text-4xl text-white mb-2">Heartless</div>
-        <p className="text-gray-400 text-base">By TheWeeknd</p>
+        <div className="font-bolder text-4xl mb-2">Heartless</div>
+        <p className="text-gray-600 text-base">By TheWeeknd</p>
       </div>
     </div>
   );

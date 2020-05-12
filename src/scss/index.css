@@ -1,3 +1,10 @@
+:root {
+  --light-bg: #e6e6e6;
+  --light-text: #9f7aea;
+  --dark-bg: #262626;
+  --dark-text: #e6e6e6;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -28,6 +35,20 @@ html {
   }
 }
 
+.light {
+  --bg: var(--light-bg);
+  --text: var(--light-text);
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.dark {
+  --bg: var(--dark-bg);
+  --text: var(--dark-text);
+  background-color: var(--bg);
+  color: var(--text);
+}
+
 .horizontal-scroll {
   max-width: 90rem;
   margin: 0 auto;
@@ -43,7 +64,7 @@ html {
 }
 
 .horizontal-scroll::-webkit-scrollbar {
-  background-color: #262626;
+  background-color: var(--bg);
   height: 0.3em;
 }
 
@@ -52,7 +73,7 @@ html {
 }
 
 .horizontal-scroll::-webkit-scrollbar-thumb {
-  background-color: #1a1a1a;
+  background-color: var(--bg);
 }
 
 .liked {
@@ -65,7 +86,7 @@ html {
 }
 
 .liked::-webkit-scrollbar {
-  background-color: #262626;
+  background-color: var(--bg);
   height: 0.3em;
 }
 
@@ -74,7 +95,7 @@ html {
 }
 
 .liked::-webkit-scrollbar-thumb {
-  background-color: #1a1a1a;
+  background-color: var(--bg);
 }
 
 .hot {
@@ -87,7 +108,7 @@ html {
 }
 
 .hot::-webkit-scrollbar {
-  background-color: #262626;
+  background-color: var(--bg);
   height: 0.3em;
 }
 
@@ -96,7 +117,7 @@ html {
 }
 
 .hot::-webkit-scrollbar-thumb {
-  background-color: #1a1a1a;
+  background-color: var(--bg);
 }
 
 .h-lyrics {
@@ -104,7 +125,7 @@ html {
 }
 
 .h-lyrics::-webkit-scrollbar {
-  background-color: #262626;
+  background-color: var(--bg);
   height: 0.3em;
 }
 
@@ -113,6 +134,6 @@ html {
 }
 
 .h-lyrics::-webkit-scrollbar-thumb {
-  background-color: #1a1a1a;
+  background-color: var(--bg);
 }
 /*# sourceMappingURL=index.css.map */
