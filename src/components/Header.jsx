@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { storeContext } from "./../global/store";
 import Switch from "react-switch";
 import { IconContext } from "react-icons";
 
 import { IoIosSunny, IoIosMoon } from "react-icons/io";
 
+// eslint-disable-next-line react/prop-types
 const Header = ({ search }) => {
-  const [checked, setChecked] = useState(false);
+  const { store, setStore } = useContext(storeContext);
+  const [checked, setChecked] = useState(store.theme === "dark" ? false : true);
 
   const handleChange = (checked) => {
+    checked
+      ? setStore({ ...store, theme: "light" })
+      : setStore({ ...store, theme: "dark" });
     setChecked(checked);
   };
 
@@ -36,7 +42,7 @@ const Header = ({ search }) => {
                   // paddingRight: 2,
                 }}
               >
-                <IoIosSunny></IoIosSunny>
+                <IoIosMoon></IoIosMoon>
               </div>
             }
             checkedIcon={
@@ -51,7 +57,7 @@ const Header = ({ search }) => {
                   // paddingRight: 2,
                 }}
               >
-                <IoIosMoon></IoIosMoon>
+                <IoIosSunny></IoIosSunny>
               </div>
             }
             handleDiameter={30}

@@ -3,7 +3,7 @@ import { storeContext } from "./../../global/store";
 
 // eslint-disable-next-line react/prop-types
 const ContentContainer = ({ children }) => {
-  const { store, setStore } = useContext(storeContext);
+  const { store } = useContext(storeContext);
 
   return (
     <div
