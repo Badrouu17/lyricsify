@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "react-h5-audio-player/src/styles.scss";
 import "./styles/main.css";
 import "./scss/index.css";
 import Main from "./Main.jsx";
