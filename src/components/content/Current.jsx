@@ -1,7 +1,7 @@
 import React from "react";
-import Song from "./Song";
-import Lyrics from "./Lyrics";
-import Playing from "./Playing";
+import Song from "./current-content/Song";
+import Lyrics from "./current-content/Lyrics";
+import Playing from "./current-content/Playing";
 
 const Current = () => {
   return (

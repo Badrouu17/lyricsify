@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "./Card";
+import Card from "../Card";
 import { IconContext } from "react-icons";
 import { IoIosEye, IoIosHeart, IoIosHeartEmpty } from "react-icons/io";
 
