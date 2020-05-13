@@ -33,7 +33,10 @@ const Lyrics = ({ url }) => {
         <div
           className="flex-1 text-4xl h-lyrics overflow-y-scroll pl-24 w-full pb-4"
           dangerouslySetInnerHTML={{
-            __html: lyrics && lyrics.replace(/\n/g, "<br>"),
+            __html:
+              lyrics !== ""
+                ? lyrics.replace(/\n/g, "<br>")
+                : "<br> <br> seems like your internet connection couldn't get the lyrics 😕, <br> please try to refresh the page.",
           }}
         ></div>
       )}
