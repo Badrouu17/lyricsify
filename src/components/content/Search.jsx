@@ -29,9 +29,12 @@ const Search = () => {
         artist: hit.result.primary_artist.name,
         views: hit.result.stats.pageviews,
         artwork: hit.result.song_art_image_url,
+        liked: false,
+        audio: null,
       };
     });
     const fiveSongs = songs.filter((song) => song.number <= 4);
+    console.log(fiveSongs[0]);
     setResults(fiveSongs);
     setLoading(false);
   };
