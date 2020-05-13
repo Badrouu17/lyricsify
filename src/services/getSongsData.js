@@ -7,7 +7,7 @@ Axios.defaults.headers.common = {
 export async function getSongsData(song, artist) {
   try {
     const response = await Axios.get(
-      `https://api.genius.com/search?q=${song}%20${artist}`
+      `https://cors-anywhere.herokuapp.com/https://api.genius.com/search?q=${song}%20${artist}`
     );
     return response;
   } catch (error) {

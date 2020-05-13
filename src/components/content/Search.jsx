@@ -1,16 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchResults from "./SearchResults";
 import Header from "../Header";
+import { getSongsData } from "./../../services/getSongsData";
 
 const Search = () => {
+  const [form, setForm] = useState({ artist: "", song: "" });
+  const [loading, setLoading] = useState(false);
+  const [results, setResults] = useState([]);
+
+  const searchHandler = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    if (form.artist === "" || form.song === "") {
+      setLoading(false);
+      return alert("please fill both boxes to search");
+    }
+    const response = await getSongsData(form.song, form.artist);
+    if (response.isError) {
+      setLoading(false);
+      return alert("something wrong happened!");
+    }
+    console.log(response);
+    const songs = response.data.response.hits.map((hit, i) => {
+      return {
+        number: i,
+        title: hit.result.title,
+        url: hit.result.url,
+        artist: hit.result.primary_artist.name,
+        views: hit.result.stats.pageviews,
+        artwork: hit.result.song_art_image_url,
+      };
+    });
+    const fiveSongs = songs.filter((song) => song.number <= 4);
+    setResults(fiveSongs);
+    setLoading(false);
+  };
+
   return (
     <React.Fragment>
       <Header search></Header>
       <div className="mt-0 text-center overflow-hidden shadow-lg pb-8">
         <h3>Search for your favorite songs</h3>
-        <form className="mt-10 w-full flex flex-row justify-between">
+        <form
+          onSubmit={(e) => searchHandler(e)}
+          className="mt-10 w-full flex flex-row justify-between"
+        >
           <div className="w-1/3 flex-none flex flex-wrap mx-6 font-bold">
             <input
+              onChange={(e) => {
+                setForm({ ...form, artist: e.currentTarget.value });
+              }}
               className="font-bold text-center shadow appearance-none border block w-full text-dark  rounded-full py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               id="artist"
               type="text"
@@ -19,6 +58,9 @@ const Search = () => {
           </div>
           <div className="flex-2 md:w-1/2 mx-6">
             <input
+              onChange={(e) => {
+                setForm({ ...form, song: e.currentTarget.value });
+              }}
               className="font-bold text-center shadow appearance-none border block w-full text-dark  rounded-full py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="song-name"
               type="text"
@@ -36,7 +78,7 @@ const Search = () => {
         </form>
       </div>
       <div className="flex-1">
-        <SearchResults></SearchResults>
+        <SearchResults loading={loading} songs={results}></SearchResults>
       </div>
     </React.Fragment>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 
 // eslint-disable-next-line react/prop-types
-const Card = ({ liked }) => {
+const Card = ({ song, liked }) => {
   return (
     <div
       className={`flex ${
@@ -12,13 +12,14 @@ const Card = ({ liked }) => {
         <img
           className="w-full self-center"
           // eslint-disable-next-line no-undef
-          src={require("./cover.jpg")}
+          // src={require("./cover.jpg")}
+          src={song && song.artwork}
           alt="Sunset in the mountains"
         />
       </div>
       <div className={`text-center px-6 ${liked ? "pt-32" : "py-4"}`}>
-        <div className="font-bolder text-4xl mb-2">Heartless</div>
-        <p className="text-gray-600 text-base">By TheWeeknd</p>
+        <div className="font-bolder text-4xl mb-2">{song && song.title}</div>
+        <p className="text-gray-600 text-base">By {song && song.artist}</p>
       </div>
     </div>
   );
