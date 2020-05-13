@@ -10,7 +10,9 @@ const Lyrics = ({ url }) => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await getSongsLyrics(url);
-      console.log(response);
+      if (response.isError) {
+        return setLyrics("");
+      }
       setLyrics(response.data.lyrics);
       setLoading(false);
     };

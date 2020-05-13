@@ -1,24 +1,33 @@
-import React, { useState, useContext } from "react";
-import { storeContext } from "./../../global/store";
+import React, { useState } from "react";
 import { getYoutubeId } from "./../../services/getYoutubId";
 import { Redirect } from "react-router-dom";
+import Loader from "react-loader-spinner";
+import { storeCurrentSong } from "./../../services/localStorage";
 
 // eslint-disable-next-line react/prop-types
 const Card = ({ song, liked }) => {
   const [go, setGo] = useState(false);
-  const { store, setStore } = useContext(storeContext);
+  const [loading, setLoading] = useState(false);
 
   const handleClick = async (e) => {
     e.preventDefault();
+    setLoading(true);
     const response = await getYoutubeId(song.title, song.artist);
     if (response.isError) {
       return alert("something wrong happened!");
     }
-    console.log(response.data.items[0].id.videoId);
     const audio = response.data.items[0].id.videoId;
-    setStore({ ...store, currentSong: { ...song, audio } });
+    storeCurrentSong({ ...song, audio });
     setGo(true);
+    setLoading(false);
   };
+
+  if (loading)
+    return (
+      <div className="flex flex-row items-center justify-center pt-8 pb-10">
+        <Loader type="Oval" color="#9f7aea" height={150} width={150}></Loader>
+      </div>
+    );
 
   if (go) return <Redirect exact push to="/dashboard/current"></Redirect>;
 
