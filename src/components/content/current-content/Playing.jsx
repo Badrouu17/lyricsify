@@ -11,7 +11,9 @@ const Playing = ({ audio }) => {
         className={bg}
         layout="horizontal"
         showJumpControls={false}
-        src={`https://lyrics-scraper.herokuapp.com/getAudio/${audio}`}
+        src={`https://lyrics-scraper.herokuapp.com/getAudio/${
+          audio ? audio : ""
+        }`}
         loop={true}
       />
     </div>

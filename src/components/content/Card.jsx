@@ -1,10 +1,33 @@
-import React from "react";
+import React, { useState, useContext } from "react";
+import { storeContext } from "./../../global/store";
+import { getYoutubeId } from "./../../services/getYoutubId";
+import { Redirect } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
 const Card = ({ song, liked }) => {
+  const [go, setGo] = useState(false);
+  const { store, setStore } = useContext(storeContext);
+
+  const handleClick = async (e) => {
+    e.preventDefault();
+    const response = await getYoutubeId(song.title, song.artist);
+    if (response.isError) {
+      return alert("something wrong happened!");
+    }
+    console.log(response.data.items[0].id.videoId);
+    const audio = response.data.items[0].id.videoId;
+    setStore({ ...store, currentSong: { ...song, audio } });
+    setGo(true);
+  };
+
+  if (go) return <Redirect exact push to="/dashboard/current"></Redirect>;
+
   return (
     <div
-      className={`flex ${
+      onClick={(e) => {
+        handleClick(e);
+      }}
+      className={`cursor-pointer flex ${
         liked ? "flex-row justify-center ml-20" : "flex-col"
       } `}
     >

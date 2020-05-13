@@ -11,16 +11,15 @@ const Search = () => {
   const searchHandler = async (e) => {
     e.preventDefault();
     setLoading(true);
-    if (form.artist === "" || form.song === "") {
+    if (form.artist === "" && form.song === "") {
       setLoading(false);
-      return alert("please fill both boxes to search");
+      return alert("please fill at least one box to search");
     }
     const response = await getSongsData(form.song, form.artist);
     if (response.isError) {
       setLoading(false);
       return alert("something wrong happened!");
     }
-    console.log(response);
     const songs = response.data.response.hits.map((hit, i) => {
       return {
         number: i,
@@ -34,7 +33,6 @@ const Search = () => {
       };
     });
     const fiveSongs = songs.filter((song) => song.number <= 4);
-    console.log(fiveSongs[0]);
     setResults(fiveSongs);
     setLoading(false);
   };
