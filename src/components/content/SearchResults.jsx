@@ -28,7 +28,9 @@ const SearchResults = ({ songs, loading }) => {
       className="pt-12 pb-10 overflow-x-hidden horizontal-scroll"
     >
       {songs.length > 0
-        ? songs.map((song, i) => <Card key={i} song={song}></Card>)
+        ? songs.map((song, i) => (
+            <Card key={i} song={song} searchCard={true}></Card>
+          ))
         : null}
     </div>
   );

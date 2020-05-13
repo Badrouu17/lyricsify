@@ -5,11 +5,14 @@ import Loader from "react-loader-spinner";
 import { storeCurrentSong } from "./../../services/localStorage";
 
 // eslint-disable-next-line react/prop-types
-const Card = ({ song, liked }) => {
+const Card = ({ song, liked, searchCard }) => {
   const [go, setGo] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const handleClick = async (e) => {
+    if (!searchCard) {
+      return null;
+    }
     e.preventDefault();
     setLoading(true);
     const response = await getYoutubeId(song.title, song.artist);
