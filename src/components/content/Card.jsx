@@ -5,12 +5,12 @@ import Loader from "react-loader-spinner";
 import { storeCurrentSong } from "./../../services/localStorage";
 
 // eslint-disable-next-line react/prop-types
-const Card = ({ song, liked, searchCard }) => {
+const Card = ({ song, liked, clickable }) => {
   const [go, setGo] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const handleClick = async (e) => {
-    if (!searchCard) {
+    if (!clickable) {
       return null;
     }
     e.preventDefault();

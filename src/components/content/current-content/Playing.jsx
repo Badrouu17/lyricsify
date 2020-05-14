@@ -22,6 +22,8 @@ const Playing = ({ audio }) => {
           audio ? audio : ""
         }`}
         loop={true}
+        progressUpdateInterval={20}
+        progressJumpSteps={{ backward: 5000, forward: 5000 }}
       />
     </div>
   );

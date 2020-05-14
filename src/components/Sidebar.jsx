@@ -43,7 +43,7 @@ const Sidebar = () => {
               className="flex items-center mx-4 mt-4 group"
             >
               <IoIosFlame></IoIosFlame>
-              <span className="ml-6">Hot Now</span>
+              <span className="ml-6">Most Viewed</span>
             </NavLink>
           </li>
           <li className="mt-10 hover:text-gray-300">
