@@ -4,7 +4,7 @@ import Card from "./Card";
 import { getLikedList } from "./../../services/localStorage";
 
 const Liked = () => {
-  const [list, setList] = useState(getLikedList());
+  const [list] = useState(getLikedList());
 
   return (
     <React.Fragment>
@@ -14,14 +14,10 @@ const Liked = () => {
       </div>
       <div className="flex-1">
         <div className="liked pt-12 pb-10 overflow-y-auto">
-          {list.map((song, i) => (
-            <Card song={song} key={i} clickable liked></Card>
-          ))}
-          {/* <Card liked></Card>
-          <Card liked></Card>
-          <Card liked></Card>
-          <Card liked></Card>
-          <Card liked></Card> */}
+          {list &&
+            list.map((song, i) => (
+              <Card song={song} key={i} clickable liked></Card>
+            ))}
         </div>
       </div>
     </React.Fragment>

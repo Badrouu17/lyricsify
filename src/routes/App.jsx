@@ -31,7 +31,7 @@ const App = () => {
           exact
           render={(props) => <Dashboard current {...props}></Dashboard>}
         ></Route>
-        <Redirect to="/dashboard"></Redirect>
+        <Redirect to="/dashboard/hot"></Redirect>
       </Switch>
     </React.Fragment>
   );
