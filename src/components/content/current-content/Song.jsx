@@ -1,9 +1,14 @@
-import React, { useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { storeContext } from "./../../../global/store";
 
 import Card from "../Card";
 import { IconContext } from "react-icons";
 import { IoIosEye, IoIosHeart, IoIosHeartEmpty } from "react-icons/io";
+import {
+  addToLiked,
+  removeFromLiked,
+  isLiked,
+} from "./../../../services/localStorage";
 
 function kFormatter(num) {
   return Math.abs(num) > 999
@@ -13,8 +18,21 @@ function kFormatter(num) {
 
 const Song = ({ song }) => {
   const { store, setStore } = useContext(storeContext);
+  const [liked, setLiked] = useState(isLiked(store.currentSong));
+
+  useEffect(() => {
+    setLiked(isLiked(store.currentSong));
+  });
 
   const iconColor = store.theme === "light" ? "#9f7aea" : "#fff";
+
+  const handleLike = (e) => {
+    e.preventDefault();
+    setLiked(!liked);
+    !liked
+      ? addToLiked({ ...store.currentSong })
+      : removeFromLiked({ ...store.currentSong });
+  };
 
   return (
     <div className="w-1/3 py-32 overflow-hidden shadow-lg flex flex-col">
@@ -27,9 +45,18 @@ const Song = ({ song }) => {
             <span className=" w-1/2">{kFormatter(song.views)} </span>
             <IoIosEye></IoIosEye>
           </div>
-          <div className="mt-4 flex flex-row items-center justify-center">
+          <div
+            onClick={(e) => {
+              handleLike(e);
+            }}
+            className="mt-4 flex flex-row items-center justify-center"
+          >
             <span className=" w-1/2">Add to liked</span>
-            <IoIosHeartEmpty></IoIosHeartEmpty>
+            {!liked ? (
+              <IoIosHeartEmpty></IoIosHeartEmpty>
+            ) : (
+              <IoIosHeart></IoIosHeart>
+            )}
           </div>
         </IconContext.Provider>
       </div>

@@ -28,7 +28,6 @@ const Search = () => {
         artist: hit.result.primary_artist.name,
         views: hit.result.stats.pageviews,
         artwork: hit.result.song_art_image_url,
-        liked: false,
         audio: null,
       };
     });

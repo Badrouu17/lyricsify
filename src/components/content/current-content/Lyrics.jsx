@@ -36,7 +36,7 @@ const Lyrics = ({ url }) => {
             __html:
               lyrics !== ""
                 ? lyrics.replace(/\n/g, "<br>")
-                : "<br> <br> seems like your internet connection couldn't get the lyrics 😕, <br> please try to refresh the page.",
+                : "<br> <br> seems like your connection couldn't get the lyrics 😕, <br> please try to refresh the page.",
           }}
         ></div>
       )}

@@ -9,7 +9,6 @@ const defaultSong = {
   title: "War",
   url: null,
   views: 913824,
-  liked: false,
   audio: null,
 };
 

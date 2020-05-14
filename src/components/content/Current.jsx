@@ -18,13 +18,13 @@ const Current = () => {
   }, []);
 
   const {
-    currentSong: { artist, artwork, title, url, views, liked, audio },
+    currentSong: { artist, artwork, title, url, views, audio },
   } = store;
 
   return (
     <div className="flex-1 flex flex-col">
       <div className="flex-1 flex flex-row">
-        <Song song={{ artist, artwork, title, views, liked }}></Song>
+        <Song song={{ artist, artwork, title, views }}></Song>
         <Lyrics url={url}></Lyrics>
       </div>
       <Playing audio={audio}></Playing>
