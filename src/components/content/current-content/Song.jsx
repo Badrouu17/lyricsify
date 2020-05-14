@@ -12,8 +12,16 @@ import {
 
 function kFormatter(num) {
   return Math.abs(num) > 999
-    ? Math.sign(num) * (Math.abs(num) / 1000).toFixed(1) + "k"
+    ? Math.sign(num) * (Math.abs(num) / 1000).toFixed(1) + " K"
     : Math.sign(num) * Math.abs(num);
+}
+
+function mFormatter(k) {
+  let num = k.replace(" K", "");
+  num = parseInt(num, 10);
+  return Math.abs(num) > 999
+    ? Math.sign(num) * (Math.abs(num) / 1000).toFixed(1) + " M"
+    : k;
 }
 
 const Song = ({ song }) => {
@@ -42,14 +50,14 @@ const Song = ({ song }) => {
           value={{ size: "1em", style: { color: iconColor } }}
         >
           <div className="mt-4 flex flex-row items-center justify-center">
-            <span className=" w-1/2">{kFormatter(song.views)} </span>
+            <span className=" w-1/2">{mFormatter(kFormatter(song.views))}</span>
             <IoIosEye></IoIosEye>
           </div>
           <div
             onClick={(e) => {
               handleLike(e);
             }}
-            className="mt-4 flex flex-row items-center justify-center"
+            className=" cursor-pointer mt-4 flex flex-row items-center justify-center"
           >
             <span className=" w-1/2">Add to liked</span>
             {!liked ? (
