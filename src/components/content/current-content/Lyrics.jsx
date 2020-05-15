@@ -11,7 +11,9 @@ const Lyrics = ({ url }) => {
     const fetchData = async () => {
       const response = await getSongsLyrics(url);
       if (response.isError) {
-        return setLyrics("");
+        return setLyrics(
+          "<br> <br> seems like your connection couldn't get the lyrics 😕, <br> please try to refresh the page."
+        );
       }
       setLyrics(response.data.lyrics);
       setLoading(false);

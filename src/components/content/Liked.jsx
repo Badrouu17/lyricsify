@@ -14,10 +14,15 @@ const Liked = () => {
       </div>
       <div className="flex-1">
         <div className="liked pt-12 pb-10 overflow-y-auto">
-          {list &&
+          {list && list.length > 0 ? (
             list.map((song, i) => (
               <Card song={song} key={i} clickable liked></Card>
-            ))}
+            ))
+          ) : (
+            <div className="text-center mt-64 opacity-50">
+              <p>Your liked list is empty.</p>
+            </div>
+          )}
         </div>
       </div>
     </React.Fragment>
