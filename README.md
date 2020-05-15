@@ -6,6 +6,12 @@ built with ❤ using React , React-Hooks, React-Context-Api, React-Router, Sass 
 
 Uses lyrics-scraper : https://github.com/Badrouu17/lyrics-scraper
 
+## Try it
+
+Live demo : https://lyricsify.netlify.app
+
+![alt text](https://res.cloudinary.com/batn05000/image/upload/v1589527555/lyricsify_epg0mo.png)
+
 ## Available Scripts
 
 In the project directory, you can run:
