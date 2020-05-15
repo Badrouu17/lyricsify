@@ -10,7 +10,7 @@ Uses lyrics-scraper : https://github.com/Badrouu17/lyrics-scraper
 
 Live demo : https://lyricsify.netlify.app
 
-![alt text](https://res.cloudinary.com/batn05000/image/upload/v1589527555/lyricsify_epg0mo.png)
+![alt text](https://res.cloudinary.com/batn05000/image/upload/v1589528453/chrome_JVWLsnFhkN_tfhk6x.png)
 
 ## Available Scripts
 
