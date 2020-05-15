@@ -4,7 +4,6 @@ import Loader from "react-loader-spinner";
 
 const SearchResults = ({ songs, loading }) => {
   const onWheel = (e) => {
-    e.preventDefault();
     var container = document.getElementById("sr");
     var containerScrollPosition = document.getElementById("sr").scrollLeft;
     container.scrollTo({

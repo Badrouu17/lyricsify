@@ -15,7 +15,7 @@ const Current = () => {
     } else {
       setStore({ ...store, currentSong });
     }
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const {
     currentSong: { artist, artwork, title, url, views, audio },

@@ -19,13 +19,15 @@ const Lyrics = ({ url }) => {
       setLoading(false);
     };
     fetchData();
-  }, [lyrics]);
+  }, [lyrics, url]);
 
   return (
     <div className="flex-1 flex flex-col">
       <div className="mt-0 text-center overflow-hidden shadow-lg">
         <Header></Header>
-        <h2 className="ml-12">Lyrics 🎼</h2>
+        <h2 className="ml-12">
+          Lyrics <span></span> 🎼
+        </h2>
       </div>
       {loading ? (
         <div className="flex flex-row items-center justify-center pt-32 pb-10">

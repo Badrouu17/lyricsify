@@ -53,7 +53,7 @@ const Search = () => {
               className="font-bold text-center shadow appearance-none border block w-full text-dark  rounded-full py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               id="artist"
               type="text"
-              placeHolder="Artist"
+              placeholder="Artist"
             />
           </div>
           <div className="flex-2 md:w-1/2 mx-6">
@@ -64,7 +64,7 @@ const Search = () => {
               className="font-bold text-center shadow appearance-none border block w-full text-dark  rounded-full py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="song-name"
               type="text"
-              placeHolder="Song name"
+              placeholder="Song name"
             />
           </div>
           <div className="flex-1 md:w-1/2 mx-6">

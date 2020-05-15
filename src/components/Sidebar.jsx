@@ -22,8 +22,9 @@ const Sidebar = () => {
           className=" flex-1"
           height="120"
           width="120"
+          alt="logo"
           // eslint-disable-next-line no-undef
-          src={require("./../Lyricsify.png")}
+          src={require("./../scss/Lyricsify.png")}
         />
       </div>
       <IconContext.Provider value={{ size: "1.5em", style: { color: "#fff" } }}>

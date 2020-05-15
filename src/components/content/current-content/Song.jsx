@@ -25,12 +25,12 @@ function mFormatter(k) {
 }
 
 const Song = ({ song }) => {
-  const { store, setStore } = useContext(storeContext);
+  const { store } = useContext(storeContext);
   const [liked, setLiked] = useState(isLiked(store.currentSong));
 
   useEffect(() => {
     setLiked(isLiked(store.currentSong));
-  });
+  }, [store.currentSong]);
 
   const iconColor = store.theme === "light" ? "#9f7aea" : "#fff";
 
