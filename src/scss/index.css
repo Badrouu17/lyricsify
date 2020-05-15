@@ -136,4 +136,59 @@ html {
 .h-lyrics::-webkit-scrollbar-thumb {
   background-color: var(--bg);
 }
+
+.advice {
+  display: none;
+}
+
+@media only screen and (max-width: 794px) {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: -webkit-gradient(linear, left top, right bottom, from(#6b46c1), to(#b794f4));
+    background-image: linear-gradient(to right bottom, #6b46c1, #b794f4);
+  }
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  .app-content {
+    display: none;
+  }
+  .advice {
+    color: #fff;
+    background-image: -webkit-gradient(linear, left top, right bottom, from(#6b46c1), to(#b794f4));
+    background-image: linear-gradient(to right bottom, #6b46c1, #b794f4);
+    display: block;
+    max-width: 120rem;
+    margin: 120px 40px;
+    padding: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    -webkit-box-shadow: 0 2rem 6rem 0.5rem rgba(101, 90, 86, 0.2);
+            box-shadow: 0 2rem 6rem 0.5rem rgba(101, 90, 86, 0.2);
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 2fr 2fr;
+        grid-template-rows: 2fr 2fr;
+    justify-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .advice-content {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+  .advice-logo {
+    width: 80px;
+  }
+}
 /*# sourceMappingURL=index.css.map */
