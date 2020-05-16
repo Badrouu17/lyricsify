@@ -30,35 +30,26 @@ const Sidebar = () => {
       <IconContext.Provider value={{ size: "1.5em", style: { color: "#fff" } }}>
         <ul className="ml-20 mt-6 mb-24 py-6 text-4xl font-bold text-white">
           <li className="mt-6 hover:text-gray-300">
-            <NavLink
-              to="/dashboard/search"
-              className="flex items-center mx-4 mt-4 group"
-            >
+            <NavLink to="/search" className="flex items-center mx-4 mt-4 group">
               <IoIosSearch></IoIosSearch>
               <span className="ml-6">Search</span>
             </NavLink>
           </li>
           <li className="mt-10 hover:text-gray-300">
-            <NavLink
-              to="/dashboard/hot"
-              className="flex items-center mx-4 mt-4 group"
-            >
+            <NavLink to="/" className="flex items-center mx-4 mt-4 group">
               <IoIosFlame></IoIosFlame>
               <span className="ml-6">Most Viewed</span>
             </NavLink>
           </li>
           <li className="mt-10 hover:text-gray-300">
-            <NavLink
-              to="/dashboard/liked"
-              className="flex items-center mx-4 mt-4 group"
-            >
+            <NavLink to="/liked" className="flex items-center mx-4 mt-4 group">
               <IoIosHeart></IoIosHeart>
               <span className="ml-6">You Liked</span>
             </NavLink>
           </li>
           <li className="mt-10 hover:text-gray-300">
             <NavLink
-              to="/dashboard/current"
+              to="/current"
               className="flex items-center mx-4 mt-4 group"
             >
               <IoIosMusicalNote></IoIosMusicalNote>

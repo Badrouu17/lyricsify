@@ -9,31 +9,26 @@ const App = () => {
       <div className="app-content">
         <Switch>
           <Route
-            path="/dashboard"
-            exact
-            render={(props) => <Dashboard {...props}></Dashboard>}
-          ></Route>
-          <Route
-            path="/dashboard/search"
+            path="/search"
             exact
             render={(props) => <Dashboard search {...props}></Dashboard>}
           ></Route>
           <Route
-            path="/dashboard/hot"
-            exact
-            render={(props) => <Dashboard hot {...props}></Dashboard>}
-          ></Route>
-          <Route
-            path="/dashboard/liked"
+            path="/liked"
             exact
             render={(props) => <Dashboard liked {...props}></Dashboard>}
           ></Route>
           <Route
-            path="/dashboard/current"
+            path="/current"
             exact
             render={(props) => <Dashboard current {...props}></Dashboard>}
           ></Route>
-          <Redirect to="/dashboard/hot"></Redirect>
+          <Route
+            path="/"
+            exact
+            render={(props) => <Dashboard hot {...props}></Dashboard>}
+          ></Route>
+          <Redirect to="/"></Redirect>
         </Switch>
       </div>
       <SmallDevices></SmallDevices>
