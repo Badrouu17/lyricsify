@@ -32,7 +32,7 @@ const Card = ({ song, liked, clickable }) => {
       </div>
     );
 
-  if (go) return <Redirect exact push to="/dashboard/current"></Redirect>;
+  if (go) return <Redirect exact push to="/current"></Redirect>;
 
   return (
     <div
