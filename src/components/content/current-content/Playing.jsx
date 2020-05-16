@@ -16,7 +16,7 @@ const Playing = ({ audio }) => {
   return (
     <div className={`${bg} h-24 overflow-hidden shadow-lg`}>
       <Prompt
-        when={location.pathname === "/dashboard/current" && playing}
+        when={location.pathname === "/current" && playing}
         message={() => "The song will quite if you continue, are you sure ?"}
       />
       <AudioPlayer
