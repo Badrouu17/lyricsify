@@ -59,7 +59,7 @@ const Sidebar = () => {
         </ul>
       </IconContext.Provider>
       <div className=" mt-40 text-center text-xl text-white opacity-75">
-        <p>built with ❤ by Badreddin laabed.</p>
+        <p>built with ❤ by Badreddin labed.</p>
       </div>
     </div>
   );
